@@ -1,0 +1,478 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: #34495e;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Services Section */
+.services {
+    background: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.service {
+    background: #f9f9f9;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    border-left: 5px solid #2980b9;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.service h3 {
+    margin-top: 0;
+    color: #2980b9;
+}
+
+.service p {
+    font-size: 1rem;
+}
+
+/* Why Choose Me Section */
+.why-choose-me {
+    background: #ecf0f1;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.why-choose-me h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.why-choose-me p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Contact Form */
+.contact-form {
+    background: white;
+    padding: 30px;
+    width: 60%;
+    margin: 30px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+}
+
+.contact-form h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background: #2980b9;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.contact-form button:hover {
+    background: #1c638d;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero, .services, .why-choose-me, .contact-form {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Service Hover Effect */
+.service {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.service:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service, .contact-form {
+        width: 90%;
+    }
+
+    .hero h2, .services h2, .why-choose-me h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p, .why-choose-me p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Header */
+.about-header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.about-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* About Section */
+.about-section {
+    background: white;
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.about-section h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+/* Skill Ratings Section */
+.skillset {
+    background: #ecf0f1;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.skillset h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.skill-box {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    border-left: 5px solid #2980b9;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.skill-box h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-box h3 span {
+    font-size: 1.2rem;
+    color: #f39c12; /* Gold color for star ratings */
+}
+
+.skill-box p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Contact Section */
+.contact-card {
+    background: white;
+    padding: 30px;
+    width: 60%;
+    margin: 30px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+}
+
+.contact-card h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.contact-card p {
+    font-size: 1.1rem;
+}
+
+.contact-card input, 
+.contact-card textarea {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-card button {
+    background: #2980b9;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.contact-card button:hover {
+    background: #1c638d;
+}
+
+/* Footer */
+.about-footer {
+    text-align: center;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.about-section, .skillset, .contact-card {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Skill Box Hover Effect */
+.skill-box {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.skill-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skill-box, .contact-card {
+        width: 90%;
+    }
+
+    .about-section h2, .skillset h2, .contact-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-section p, .skillset p, .contact-card p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Project Page Styling */
+.project-header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.project-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.project-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Intro Section */
+.project-intro {
+    text-align: center;
+    padding: 50px 20px;
+    background: #ecf0f1;
+}
+
+.project-intro h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+/* Project Showcase */
+.project-showcase {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.project-card {
+    background: white;
+    width: 500px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+    color: #2980b9;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 18px;
+    background: #2980b9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    background: #1c638d;
+}
+
+/* Project Card Hover */
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.project-footer {
+    text-align: center;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-card {
+        width: 90%;
+    }
+
+    .project-intro h2 {
+        font-size: 1.8rem;
+    }
+}
