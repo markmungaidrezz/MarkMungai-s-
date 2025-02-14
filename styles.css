@@ -337,53 +337,48 @@ footer {
     animation: fadeIn 1s ease-in-out;
 }
 
-    /* Floating WhatsApp Icon */
+/* Style for the floating WhatsApp icon */
 .whatsapp-float {
     position: fixed;
-    bottom: 20px; /* Distance from bottom */
-    right: 20px; /* Distance from right */
-    background: #25D366; /* WhatsApp Green */
-    color: white;
-    width: 60px;
-    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
     border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-    text-decoration: none;
-    z-index: 1000; /* Ensure it appears above everything */
+    transition: all 0.3s ease;
 }
 
-/* Hover Effect */
 .whatsapp-float:hover {
-    transform: scale(1.1);
+    background-color: #128C7E;
 }
 
-/* Tooltip Styling */
-.whatsapp-tooltip {
-    visibility: hidden;
-    background-color: black;
+/* WhatsApp icon style */
+.whatsapp-float i {
+    font-size: 30px;
     color: white;
-    text-align: center;
-    padding: 5px 10px;
-    border-radius: 5px;
+}
+
+/* Tooltip for the WhatsApp button */
+.whatsapp-tooltip {
+    display: none;
     position: absolute;
-    bottom: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    font-size: 14px;
+    bottom: 50px;
+    right: 0;
+    background-color: #25D366;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
     white-space: nowrap;
 }
 
-/* Show Tooltip on Hover */
 .whatsapp-float:hover .whatsapp-tooltip {
-    visibility: visible;
-    opacity: 1;
+    display: block;
 }
 
 /* Skill Box Hover Effect */
