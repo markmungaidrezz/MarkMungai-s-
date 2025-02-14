@@ -472,6 +472,55 @@ footer {
         width: 90%;
     }
 
+    /* Floating WhatsApp Icon */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px; /* Distance from bottom */
+    right: 20px; /* Distance from right */
+    background: #25D366; /* WhatsApp Green */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    text-decoration: none;
+    z-index: 1000; /* Ensure it appears above everything */
+}
+
+/* Hover Effect */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Tooltip Styling */
+.whatsapp-tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Show Tooltip on Hover */
+.whatsapp-float:hover .whatsapp-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
     .project-intro h2 {
         font-size: 1.8rem;
     }
