@@ -3,38 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project - Mark Mungai</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Projects - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <header class="project-header">
-        <h1>My Featured Project</h1>
-        <nav class="project-nav">
-            <ul>
-                <li><a href="index.html">Home & Services</a></li>
-                <li><a href="about-contact.html">About & Contact</a></li>
-                <li><a href="projects.html">Project</a></li>
-            </ul>
-        </nav>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1 class="typing-title">Welcome to My Portfolio</h1>
+            <p class="typing-subtitle">
+                <span class="static-text">I'm Mark Mungai.</span>
+                <span class="dynamic-text"></span>
+            </p>
+        </div>
     </header>
 
-    <section class="project-intro">
-        <h2>Christian Outreach Website</h2>
-        <p>This project was developed to **support and empower communities** by providing a platform for donations,  
-           event updates, and community engagement.</p>
-    </section>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-    <section class="project-showcase">
-        <div class="project-card">
-            <img src="https://via.placeholder.com/800x400" alt="Christian Outreach Website">
-            <h3>🌍 Christian Outreach</h3>
-            <p>A responsive, user-friendly **non-profit website** designed for a **charity organization**.</p>
-            <a href="https://christianoutreachm.org/index.html" target="_blank">Visit Website</a>
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="projects-content">
+            <h2>My Projects</h2>
+            <p>Here are some of the projects I've worked on. Each project reflects my passion for creating modern, functional, and visually stunning websites.</p>
+
+          <!-- Project 2: Church Website -->
+<div class="project">
+    <h3>Project 1: Christian Outreach Ministries Website</h3>
+    <p>A website for Christian Outreach Ministries, designed to share the church's mission, values, and community activities. The website is built with modern web technologies to ensure a seamless user experience.</p>
+    <ul>
+        <li>Frontend: HTML, CSS, JavaScript</li>
+        <li>Responsive Design</li>
+        <li>Content Management System (CMS) Integration</li>
+    </ul>
+    <p>Visit the live website: <a href="https://www.christianoutreachm.org/" target="_blank" class="project-button">Christian Outreach Ministries</a></p>
+</div>
+
+  <!-- Project 2 -->
+<div class="project">
+    <h3>Project 2: Writers Haven</h3>
+    <p>A website for writers and developers, designed to share talent, potential, and community awareness. The website is built with modern web technologies to ensure a seamless user experience.</p>
+    <ul>
+        <li>Frontend: HTML, CSS, JavaScript</li>
+        <li>Responsive Design</li>
+        <li>Content Management System (CMS) Integration</li>
+    </ul>
+   <p>Visit the live website:  <a href="https://writershavenn-nrzo.vercel.app/index.html" target="_blank" class="project-button">Writers Haven</a></p>
+</div>
         </div>
     </section>
 
-    <footer class="project-footer">
-        <p>📍 Kiambu, Thika, Kenya | 📧 markmungaikim@gmail.com | 📞 +254759922473 / +254712598876</p>
+     <a href="https://wa.me/254759922473" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Chat with us</span>
+</a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Your Name. All rights reserved.</p>
+            <p>Email: <a href="mailto:markmungaikimani1@gmail.com">markmungaikimani1@gmail.com</a></p>
+            <p>Contact: +254759922473</p>
+            
+        </div>
     </footer>
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- JavaScript for Animations -->
+    <script>
+        // Add animation when sections come into view
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                    }
+                });
+            }, {
+                threshold: 0.2 // Trigger when 20% of the section is visible
+            });
+
+            // Observe all sections with the "project" class
+            const sections = document.querySelectorAll(".project");
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+     <!-- Typing Animation Script -->
+    <script>
+        // Typing animation for the title
+        const typingTitle = document.querySelector('.typing-title');
+        const typingSubtitle = document.querySelector('.dynamic-text');
+
+        // Texts to loop through
+        const subtitleTexts = [
+            "I create modern websites...",
+            "with stunning designs",
+            "visually appealing",
+            "and seamless functionality",
+            "I am also an article writer"
+        ];
+
+        // Function to type out text
+        function typeWriter(element, text, callback) {
+            let index = 0;
+            element.textContent = ''; // Clear the element
+            const interval = setInterval(() => {
+                if (index < text.length) {
+                    element.textContent += text.charAt(index);
+                    index++;
+                } else {
+                    clearInterval(interval);
+                    if (callback) callback();
+                }
+            }, 50); // Adjust typing speed here
+        }
+
+        // Function to loop through subtitle texts
+        function loopSubtitles() {
+            let currentIndex = 0;
+
+            function showNextSubtitle() {
+                typeWriter(typingSubtitle, subtitleTexts[currentIndex], () => {
+                    setTimeout(() => {
+                        currentIndex = (currentIndex + 1) % subtitleTexts.length;
+                        showNextSubtitle();
+                    }, 2000); // Time before next subtitle starts
+                });
+            }
+
+            showNextSubtitle();
+        }
+
+        // Initialize animations
+        document.addEventListener("DOMContentLoaded", () => {
+            typeWriter(typingTitle, "Welcome to My Portfolio", () => {
+                // Add a slight delay before starting the subtitle animation
+                setTimeout(() => {
+                    loopSubtitles();
+                }, 1000);
+            });
+        });
+    </script>
 </body>
 </html>
