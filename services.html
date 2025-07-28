@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1 class="typing-title">Welcome to My Portfolio</h1>
+            <p class="typing-subtitle">
+                <span class="static-text">I'm Mark Mungai.</span>
+                <span class="dynamic-text"></span>
+            </p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="services-content">
+            <h2>Our Services</h2>
+            <p>We offer a wide range of services tailored to meet your needs. Whether you're looking for web design, development, or consultation, we've got you covered.</p>
+
+            <!-- Web Design Service -->
+            <div class="service">
+                <h3>Web Design</h3>
+                <p>Our web design service focuses on creating visually appealing and user-friendly interfaces that captivate your audience.</p>
+                <ul>
+                    <li>Custom layouts and themes</li>
+                    <li>Responsive designs for all devices</li>
+                    <li>Modern typography and color schemes</li>
+                </ul>
+            </div>
+
+            <!-- Web Development Service -->
+            <div class="service">
+                <h3>Web Development</h3>
+                <p>From frontend to backend, we build functional and dynamic websites that align with your business goals.</p>
+                <ul>
+                    <li>HTML, CSS, and JavaScript</li>
+                    <li>Backend frameworks like Node.js and Django</li>
+                    <li>Database management and API integrations</li>
+                </ul>
+            </div>
+
+            <!-- Consultation Service -->
+            <div class="service">
+                <h3>Consultation</h3>
+                <p>We provide expert guidance to help you make informed decisions about your digital presence.</p>
+                <ul>
+                    <li>Website strategy and user experience (UX)</li>
+                    <li>SEO and digital marketing insights</li>
+                    <li>Technology recommendations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+     <a href="https://wa.me/254759922473" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Chat with us</span>
+</a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>Email: <a href="mailto:markmungaikimani1@gmail.com">markmungaikimani1@gmail.com</a></p>
+            <p>Contact: +254759922473</p>
+           <p>&copy; 2023 Mark Mungai. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- JavaScript for Animations -->
+    <script>
+        // Add animation when sections come into view
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                    }
+                });
+            }, {
+                threshold: 0.2 // Trigger when 20% of the section is visible
+            });
+
+            // Observe all sections with the "service" class
+            const sections = document.querySelectorAll(".service");
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+
+ <!-- Typing Animation Script -->
+    <script>
+        // Typing animation for the title
+        const typingTitle = document.querySelector('.typing-title');
+        const typingSubtitle = document.querySelector('.dynamic-text');
+
+        // Texts to loop through
+        const subtitleTexts = [
+            "I create modern websites...",
+            "with stunning designs",
+            "visually appealing",
+            "and seamless functionality",
+            "I am also an article writer"
+        ];
+
+        // Function to type out text
+        function typeWriter(element, text, callback) {
+            let index = 0;
+            element.textContent = ''; // Clear the element
+            const interval = setInterval(() => {
+                if (index < text.length) {
+                    element.textContent += text.charAt(index);
+                    index++;
+                } else {
+                    clearInterval(interval);
+                    if (callback) callback();
+                }
+            }, 50); // Adjust typing speed here
+        }
+
+        // Function to loop through subtitle texts
+        function loopSubtitles() {
+            let currentIndex = 0;
+
+            function showNextSubtitle() {
+                typeWriter(typingSubtitle, subtitleTexts[currentIndex], () => {
+                    setTimeout(() => {
+                        currentIndex = (currentIndex + 1) % subtitleTexts.length;
+                        showNextSubtitle();
+                    }, 2000); // Time before next subtitle starts
+                });
+            }
+
+            showNextSubtitle();
+        }
+
+        // Initialize animations
+        document.addEventListener("DOMContentLoaded", () => {
+            typeWriter(typingTitle, "Welcome to My Portfolio", () => {
+                // Add a slight delay before starting the subtitle animation
+                setTimeout(() => {
+                    loopSubtitles();
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
